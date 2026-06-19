@@ -1,0 +1,100 @@
+---
+title: "TACE PSM"
+output: html_notebook
+---
+
+```{r}
+# Load libraries
+library(MatchIt)
+library(cobalt)
+library(readr)
+
+# Load your data
+df_tace_sys <- read_csv("df_tace_sys.csv")
+
+# Run MatchIt with ratio matching
+m.out <- matchit(
+  sequence_group ~ AGE + SEX + RACE 
+    + INSURANCE_STATUS
+    + Charlson_Deyo_Score + HISTOLOGY + COMBINED_STAGE_GROUP
+    + YEAR_OF_DIAGNOSIS + Surgery + Radiation_Therapy,
+  data = df_tace_sys,
+  method = "nearest",
+  ratio = 4,
+  caliper = 0.2
+)
+
+# Print standardized summary
+summary(m.out, standardize = TRUE)
+```
+
+```{r}
+love.plot(m.out, 
+          binary = "std", 
+          thresholds = c(m = .1),
+          var.order = "unadjusted", 
+          abs = TRUE)
+```
+```{r}
+matched_tace_sys <- match.data(m.out)
+write_csv(matched_tace_sys, "matched_tace_sys.csv")
+```
+
+```{r}
+df_tace_same <- read_csv("df_tace_same.csv")
+
+m.out <- matchit(
+  sequence_group ~ AGE + SEX + RACE 
+    + INSURANCE_STATUS
+    + Charlson_Deyo_Score + HISTOLOGY + COMBINED_STAGE_GROUP
+    + YEAR_OF_DIAGNOSIS + Surgery + Radiation_Therapy,
+  data = df_tace_same,
+  method = "nearest",
+  ratio = 3,
+  caliper = 0.2
+)
+
+# Print standardized summary
+summary(m.out, standardize = TRUE)
+```
+```{r}
+love.plot(m.out, 
+          binary = "std", 
+          thresholds = c(m = .1),
+          var.order = "unadjusted", 
+          abs = TRUE)
+```
+```{r}
+matched_tace_same <- match.data(m.out)
+write_csv(matched_tace_same, "matched_tace_same.csv")
+```
+
+```{r}
+df_same_sys <- read_csv("df_same_sys.csv")
+
+m.out <- matchit(
+  sequence_group ~ AGE + SEX + RACE 
+    + INSURANCE_STATUS
+    + Charlson_Deyo_Score + HISTOLOGY + COMBINED_STAGE_GROUP
+    + YEAR_OF_DIAGNOSIS + Surgery + Radiation_Therapy,
+  data = df_same_sys,
+  method = "nearest",
+  ratio = 1,
+  caliper = 0.2
+)
+
+# Print standardized summary
+summary(m.out, standardize = TRUE)
+```
+```{r}
+love.plot(m.out, 
+          binary = "std", 
+          thresholds = c(m = .1),
+          var.order = "unadjusted", 
+          abs = TRUE)
+```
+```{r}
+matched_same_sys <- match.data(m.out)
+write_csv(matched_same_sys, "matched_same_sys.csv")
+```
+
