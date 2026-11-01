@@ -1,12 +1,25 @@
+# OS / editor
 .DS_Store
+.vscode/
+.claude/
+
+# R session files
 .RData
 .Rhistory
-.vscode/
+.Rproj.user/
 
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# NCDB data and derived patient-level files (not shareable under the NCDB data use agreement)
 *.csv
+
+# Manuscript, slides, reference papers, and other binaries
 *.pdf
 *.docx
 *.xlsx
 *.pptx
 *.zip
 *.nb.html
+Papers/
