@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hcc_tace"
+version = "1.0.0"
+description = "Sequencing and timing of TACE and systemic therapy in advanced HCC: NCDB analysis code"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Nicolas Zhang" }]
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "scipy>=1.15",
+    "scikit-learn>=1.6",
+    "lifelines>=0.30",
+    "matplotlib>=3.10",
+    "seaborn>=0.13",
+]
+
+[project.optional-dependencies]
+notebooks = ["jupyter", "nbconvert"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

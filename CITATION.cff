@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the accompanying manuscript."
+title: "Analysis code for: Optimizing the Sequencing and Timing of Transarterial Chemoembolization and Systemic Therapy in Advanced Hepatocellular Carcinoma"
+type: software
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/NicWYZ/HCC_TACE"
+authors:
+  - family-names: Zhang
+    given-names: Nicolas
+    affiliation: "Department of Statistics and Operations Research, University of North Carolina at Chapel Hill"
+preferred-citation:
+  type: article
+  title: "Optimizing the Sequencing and Timing of Transarterial Chemoembolization and Systemic Therapy in Advanced Hepatocellular Carcinoma"
+  status: submitted
+  journal: "eBioMedicine"
+  year: 2026
+  authors:
+    - family-names: Shang
+      given-names: Qingyao
+    - family-names: Zhang
+      given-names: Nicolas
+    - family-names: Yang
+      given-names: Yi
+    - family-names: Ouyang
+      given-names: Meishuo
+    - family-names: Liu
+      given-names: Yinting
+    - family-names: Luo
+      given-names: Iris
+    - family-names: Luo
+      given-names: Janica
+    - family-names: Yuan
+      given-names: Selina
+    - family-names: Zhang
+      given-names: Hui
+    - family-names: He
+      given-names: You-Wen
+    - family-names: Zhao
+      given-names: Hong

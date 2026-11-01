@@ -1,0 +1,23 @@
+# conda env create -f environment.yml && conda activate hcc-tace && pip install -e .
+name: hcc-tace
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy=2.0.1
+  - pandas=2.2.3
+  - scipy=1.15.1
+  - scikit-learn=1.6.1
+  - matplotlib=3.10.0
+  - seaborn=0.13.2
+  - lifelines=0.30.0
+  - jupyter
+  - nbconvert
+  - pip
+  # R (for propensity score matching and the stratified log-rank test)
+  - r-base=4.5
+  - r-matchit=4.7.2
+  - r-cobalt=4.6.0
+  - r-readr
+  - r-ggplot2
+  - r-survival
